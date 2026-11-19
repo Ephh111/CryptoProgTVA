@@ -45,11 +45,11 @@ int main(int argc, char* argv[])
 
     for (int i = 1; i < argc; ++i) {
         std::string a = argv[i];
-        if      (a == "-h" || a == "--help") { printUsage(argv[0]); return 0; }
-        else if (a == "-e" || a == "-d")     mode = a;
-        else if (a == "-i" && i + 1 < argc)  in   = argv[++i];
-        else if (a == "-o" && i + 1 < argc)  out  = argv[++i];
-        else if (a == "-p" && i + 1 < argc)  pass = argv[++i];
+        if      (a == "-h" or a == "--help") { printUsage(argv[0]); return 0; }
+        else if (a == "-e" or a == "-d")     mode = a;
+        else if (a == "-i" and i + 1 < argc)  in   = argv[++i];
+        else if (a == "-o" and i + 1 < argc)  out  = argv[++i];
+        else if (a == "-p" and i + 1 < argc)  pass = argv[++i];
         else {
             std::cerr << "Неизвестный аргумент: " << a << "\n";
             printUsage(argv[0]);
@@ -57,7 +57,7 @@ int main(int argc, char* argv[])
         }
     }
 
-    if (mode.empty() || in.empty() || out.empty() || pass.empty()) {
+    if (mode.empty() or in.empty() or out.empty() or pass.empty()) {
         std::cerr << "Не все обязательные параметры заданы\n";
         printUsage(argv[0]);
         return 1;
